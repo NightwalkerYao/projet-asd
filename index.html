@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <!--Import Google Icon Font-->
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <!--Import materialize.css-->
+  <link type="text/css" rel="stylesheet" href="css/materialize.min.css"  media="screen,projection"/>
+
+  <!--Let browser know website is optimized for mobile-->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+</head>
+
+<body>
+  <div class="section">
+    <div class="row card card-panel">
+      <div class="col m6 s12 l5">
+        <div>
+          <!-- <form action="#"> -->
+            <div>
+              <h6>Probabilité d'arrivée d'un véhicule</h6>
+              <p class="range-field">
+                <input type="range" id="p" min="0" max="1" step="0.05" />
+              </p>
+            </div>
+
+            <div class="input-field">
+              <input id="g" type="number" min="0" value="20" class="validate">
+              <label for="g">Temps du feu Vert</label>
+            </div>
+            <div class="input-field">
+              <input id="r" type="number" min="0" value="20" class="validate">
+              <label for="r">Temps du feu Rouge</label>
+            </div>
+            <div class="input-field">
+              <input id="d" type="number" min="0" value="70" class="validate">
+              <label for="d">Durée du cycle</label>
+            </div>
+            <div class="input-field">
+              <input id="c" type="number" min="0" value="10" class="validate">
+              <label for="c">Nombre de cycles</label>
+            </div>
+            <div class="center">
+              <br>
+              <button type="button" id="run" class="waves-effect waves-light btn-large z-depth-0"> <i class="material-icons left">settings</i> Visualiser</button>
+            </div>
+          <!-- </form> -->
+        </div>
+      </div>
+      <div class="col l7">
+        <figure>
+          <div id="chart"></div>
+        </figure>
+      </div>
+    </div>
+  </div>
+
+  <div id="modal1" class="modal modal-fixed-footer">
+    <div class="modal-content">
+      <h4>Bienvenue dans le simulateur !</h4>
+      <p> <strong>Comment cela fonctionne ?</strong> </p>
+      <p>L'objet est d'ajuster les paramètres du cadre de gauche et ensuite observer l'évolution des courbes dans le cadre de droite.</p>
+      <p>Le tracé "Voie 1" désigne la longueur de la file pour la voie 1</p>
+      <p>Le tracé "Voie 2" désigne la longueur de la file pour la voie 2</p>
+      <p>Les deux tracés sont en fonction des cycles.</p>
+      <p>On admet que la voie 1 est plus utilisée que la voie 2 et on veut déterminer les temps effectifs des feux verts et rouges pour lesquels il n'y aurait 'presque' pas de sursaturation sur les deux voies.</p>
+      <p>Commencez par définir vos paramètres dans le cadre de gauche et cliquez sur "Visualiser" pour observer l'évolution des files.</p>
+    </div>
+    <div class="modal-footer">
+      <a href="#!" class="modal-close waves-effect waves-green btn-flat">D'accord</a>
+    </div>
+  </div>
+
+  <!--JavaScript at end of body for optimized loading-->
+  <script type="text/javascript" src="js/materialize.min.js"></script>
+  <script type="text/javascript" src="js/poisson.js"></script>
+  <script type="text/javascript" src="js/plotly-latest.min.js"></script>
+  <script type="text/javascript" src="js/app.js"></script>
+</body>
+</html>

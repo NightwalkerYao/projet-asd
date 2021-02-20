@@ -1,0 +1,1 @@
+Pour lancer l'application, ouvrez le fichier 'index.html' dans un navigateur qui prend en charge JavaScript
